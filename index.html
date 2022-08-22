@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even & ODD</title>
+    <style>
+
+        body{
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sub{
+            background-color: rgb(205, 231, 241);
+            border: 2px solid rgb(133, 216, 208);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30vh;
+            transition: border 0.3s ease-in-out;
+            transition: margin-bottom 0.3s ease-in-out;
+        }
+        .sub:hover{
+            border: 2.5px solid lightblue;
+            box-shadow: 4px 5px 20px  lightblue ;
+            margin-bottom: 7%;
+            width: 30vh;
+        }
+        input{
+            border: 2px solid rgb(122, 172, 196);
+            border-radius: 5px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sub">
+            
+        <h3>Even & Odd Checker</h3>
+            <input oninput="EvenOdd(); return false" id="check" type="number">
+            <h3 id="result">Result</h3>
+        </div>
+        
+    </div>
+    <script>
+function EvenOdd(){
+    let check = +document.querySelector("#check").value
+    if (check % 2){
+        document.querySelector("#result").innerHTML= check + ' is ODD'
+        let color = document.querySelector("#result")
+        color.style.color="rgb(230, 90, 100)"
+    }    
+    else{
+        document.querySelector("#result").innerHTML= check +' is Even'
+        let ccolor = document.querySelector("#result")
+        ccolor.style.color="red"
+    }
+}
+    </script>
+
+</body>
+</html>
